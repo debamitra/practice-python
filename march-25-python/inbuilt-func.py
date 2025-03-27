@@ -44,13 +44,17 @@ print(filtered)
 # Q4. Use map() to create a new list of grades:
 #      "Pass" if score >= 60, else "Fail"
 
-
+grades = map(lambda x : "Pass" if x > 60 else "Fail", scores )
+print(list(grades))
 
 # Q5. Check if all students passed using all()
 
+print(all(grades))
+
+
 # Q6. Check if at least one student failed using any()
 
-
+print(any(grades))
 
 # zip(*iterables)
 
@@ -85,6 +89,26 @@ print(filtered)
 # all([True, True, False])  # → False
 # any(iterable)
 # any([0, None, "hello"])  # → True
+
+#lambda - lambda arguments: expression
+
+# Q3. Use lambda with `map()` to double every number in a list
+nums = [1, 2, 3, 4]  # → [2, 4, 6, 8]
+print(list(map(lambda x: 2 * x, nums)))
+
+# Q4. Use lambda with `filter()` to get even numbers
+nums = [1, 2, 3, 4]  # → [2, 4]
+print(list(filter(lambda x: x%2==0, nums)))
+
+# Q5. Sort a list of tuples by the second item using lambda as key
+pairs = [(1, 3), (2, 1), (5, 0)]  # → [(5, 0), (2, 1), (1, 3)]
+
+print(sorted(pairs, key=lambda x: x[1]))
+
+
+
+
+
 
 
 
