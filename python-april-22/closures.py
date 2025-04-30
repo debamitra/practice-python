@@ -33,7 +33,8 @@ greet()
 def logger(func):
     def wrapper_func(*args,**kwargs):
         print(f"Calling add with args: {args}, kwargs: {kwargs}")
-        return func(args[0],args[1])
+        
+        return func(*args,**kwargs)
     return wrapper_func
 
 
@@ -43,3 +44,15 @@ def add(x, y):
     return x + y
 
 print(add(2, 3))
+
+
+
+from functools import wraps
+
+
+def logger(func):
+    @wraps
+    def wrapper_func(*args,**kwargs):
+        print(f"Calling {func.__name__} with args: {args}, kwargs: {kwargs}")
+        return func(*args,**kwargs)
+    return wrapper_func
