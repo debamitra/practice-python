@@ -1,4 +1,5 @@
 class Dog:
+    species = "Canine"
     # Special method that runs when i create an object
     # self refers to current object
     def __init__(self,name):
@@ -8,7 +9,12 @@ class Dog:
         return f"{self.name} says Woof"
 
 dog1 = Dog("Scooby")
+dog2 = Dog("Pluto")
 print(dog1.bark())
+print(dog2.bark())
+print(dog1.species)
+print(dog2.species)
+
 
 
 	# •	__init__(self, title, author)
@@ -32,4 +38,22 @@ class Book:
 
 book = Book("Python 101", "Deb")
 print(book.summary() ) # Output: Python 101 by Deb
-print(book.isLong())
+print(book.is_long())
+
+
+
+class Car:
+    wheels = 4
+    def __init__(self, brand,model):
+        self.brand = brand
+        self.model = model
+    
+    def description(self):
+        return f"{self.brand} {self.model} has {self.wheels} wheels"
+
+car1 = Car("Toyota", "Corolla")
+car2 = Car("Tata", "Nexon")
+
+print(car1.description())
+print(car2.description())
+    
